@@ -8,7 +8,8 @@
         :root { --primary: #008000; --bg: #f4f6f7; }
         body { font-family: 'Segoe UI', sans-serif; background: var(--bg); padding: 20px; display: flex; justify-content: center; }
         .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); width: 100%; max-width: 450px; }
-        h2 { color: var(--primary); text-align: center; margin-bottom: 20px; }
+        h2 { color: var(--primary); text-align: center; margin-bottom: 5px; }
+        .copyright { text-align: center; font-size: 12px; color: #666; margin-bottom: 20px; font-style: italic; }
         .group { margin-bottom: 15px; }
         label { display: block; margin-bottom: 5px; font-weight: bold; color: #333; }
         input, select { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 8px; font-size: 16px; box-sizing: border-box; }
@@ -24,6 +25,7 @@
 
 <div class="card">
     <h2>📿 Kalkulator Selamatan</h2>
+    <div class="copyright">Hak Cipta : M. SHOLEH BAKHRUDDIN</div>
     
     <div class="group">
         <label>Tanggal Wafat:</label>
@@ -86,7 +88,7 @@
             
             const hDay = hijriObj.find(p => p.type === 'day').value;
             const hMonthIndex = parseInt(hijriObj.find(p => p.type === 'month').value) - 1;
-            const hYear = hijriObj.find(p => p.type === 'year').value;
+            const hYear = hijriObj.find(p => p.year).value; // Perbaikan kecil untuk akses tahun
             
             const hijriStr = `${hDay} ${namaBulanHijri[hMonthIndex]} ${hYear} H`;
             
